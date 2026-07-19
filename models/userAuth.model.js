@@ -5,7 +5,9 @@ const userAuthSchema = new mongoose.Schema(
     username: {
       type: String,
       required: true,
+      trim: true,
     },
+
     email: {
       type: String,
       required: true,
@@ -13,10 +15,21 @@ const userAuthSchema = new mongoose.Schema(
       lowercase: true,
       trim: true,
     },
+
     password: {
       type: String,
       required: true,
       minlength: 6,
+    },
+
+    passwordResetOTP: {
+      type: String,
+      default: null,
+    },
+
+    passwordResetOTPExpires: {
+      type: Date,
+      default: null,
     },
   },
   {

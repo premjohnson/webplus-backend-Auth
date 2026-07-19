@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+dotenv.config();
 import cors from "cors";
 import connectDB from "./config/connectDB.js";
 import userAuthRoutes from "./routes/userAuth.routes.js";
@@ -10,6 +11,7 @@ dotenv.config();
 const app = express();
  
 const port = process.env.PORT || 5003;
+console.log(process.env);
 
 connectDB();
 
