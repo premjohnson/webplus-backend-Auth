@@ -4,7 +4,6 @@ console.log("EMAIL_USER:", process.env.EMAIL_USER);
 console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
 
 export const sendMail = async ({ to, subject, html }) => {
-
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -12,7 +11,6 @@ export const sendMail = async ({ to, subject, html }) => {
             pass: process.env.EMAIL_PASS,
         },
     });
-
     await transporter.sendMail({
         from: `"WebPlus" <${process.env.EMAIL_USER}>`,
         to,

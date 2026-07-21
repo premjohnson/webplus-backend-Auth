@@ -96,11 +96,11 @@ export const forgotPasswordService = async ({ email }) => {
     await user.save();
     const updatedUser = await UserAuth.findById(user._id);
 
-    console.log("========== SAVED USER ==========");
+    console.log("SAVED USER");
     console.log(updatedUser);
     console.log("OTP:", updatedUser.passwordResetOTP);
     console.log("Expires:", updatedUser.passwordResetOTPExpires);
-    console.log("================================");
+    
 
         await sendMail({
             to: user.email,
